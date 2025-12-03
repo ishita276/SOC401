@@ -30,16 +30,84 @@
 </header>
 
 <div class="container">
- <h2>Monitoring the Future (MTF) Dashboard</h2>
+<section id="dashboard" style="margin-top: 2rem;">
+  <h2>Interactive Data Dashboard</h2>
+  <p>
+    This dashboard brings together national data from the
+    <strong>Monitoring the Future (MTF)</strong> study to explore how
+    high school students' screen time relates to happiness and views of
+    school mental health support.
+  </p>
 
-<h3>Happiness by Weekday Screen Time</h3>
-<img src="mtf_happiness_by_hours.png" style="max-width:100%; border-radius:8px;">
+  <!-- 1. Three-outcomes line chart -->
+  <h3>1. Positive Outcomes by Screen Time (Interactive)</h3>
+  <p>
+    <strong>How to use:</strong> Hover over the points and lines to see
+    the exact percentage of students who are very happy, who find school
+    counseling helpful, and who find school mental health resources
+    helpful at each level of weekday screen time. Click items in the
+    legend to hide or show each outcome.
+  </p>
 
-<h3>Perceived Helpfulness of School Counseling by Screen Time</h3>
-<img src="mtf_counsel_by_hours.png" style="max-width:100%; border-radius:8px;">
+  <div style="width: 100%; max-width: 1000px; margin: 0 auto 2rem;">
+    <iframe
+      src="mtf_three_outcomes_by_hours.html"
+      title="MTF three outcomes by screen time"
+      style="width: 100%; height: 600px; border: none;"
+      loading="lazy"
+    ></iframe>
+  </div>
 
-<h3>Perceived Helpfulness of School Mental Health Resources by Screen Time</h3>
-<img src="mtf_mhres_by_hours.png" style="max-width:100%; border-radius:8px;">
+  <!-- 2. Radar chart -->
+  <h3>2. Digital Well-Being Profile by Screen Time (Interactive Radar)</h3>
+  <p>
+    <strong>How to use:</strong> Each colored shape represents one
+    screen-time group (&lt;3 hours, 3–6 hours, 7+ hours). The farther a
+    point is from the center, the higher the percentage of students in
+    that group who report that outcome. Hover to see the exact values;
+    toggle groups on and off using the legend.
+  </p>
+
+  <div style="width: 100%; max-width: 1000px; margin: 0 auto 2rem;">
+    <iframe
+      src="mtf_radar_by_hours.html"
+      title="MTF radar profile by screen time"
+      style="width: 100%; height: 600px; border: none;"
+      loading="lazy"
+    ></iframe>
+  </div>
+
+  <!-- 3. Short analysis -->
+  <h3>What this dashboard shows</h3>
+  <p>
+    These charts use MTF survey data on 12th graders. Screen-time is
+    grouped into three categories: less than 3 hours, 3–6 hours, and
+    7+ hours of video/TV on devices on a typical weekday. The outcomes
+    are:
+  </p>
+  <ul>
+    <li><strong>Very happy</strong> – students who describe themselves as very happy overall.</li>
+    <li><strong>Counseling helpful</strong> – students who say school counseling is quite or extremely helpful.</li>
+    <li><strong>Mental health resources helpful</strong> – students who say school mental health resources are quite or extremely helpful.</li>
+  </ul>
+
+  <p>
+    Looking across the dashboard, students with <strong>lower daily screen
+    time</strong> are more likely to report being very happy and to see
+    school-based supports as helpful. As screen time rises into the 7+ hour
+    range, the share of “very happy” students drops, and fewer students feel
+    strongly positive about school counseling and mental health resources.
+  </p>
+
+  <p>
+    Together with the YRBS findings (which show how common high screen time
+    is among U.S. high school students), this dashboard supports the
+    argument in my op-ed and policy brief: schools need to both
+    <strong>address heavy digital use</strong> and <strong>strengthen
+    visible, trusted mental health supports</strong>, especially for the
+    students who are online the most.
+  </p>
+</section>
 
   <h2>Screen Time by Gender (YRBS 2021)</h2>
 <p>
