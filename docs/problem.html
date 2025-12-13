@@ -7,10 +7,16 @@
   <style>
     body { font-family: system-ui; margin: 0; line-height: 1.6; background: #f5f5f5; }
     header { background: #23395b; color: white; padding: 1.2rem 1.5rem; }
-    nav a { color: white; margin-right: 1rem; text-decoration: none; font-weight: 600; }
+    header h1 { margin: 0 0 .25rem 0; font-size: 1.6rem; }
+    nav a { color: white; margin-right: 1rem; text-decoration: none; font-weight: 600; font-size: .95rem; }
     nav a:hover { text-decoration: underline; }
-    .container { max-width: 900px; margin: 2rem auto; padding: 1.5rem; background: white; border-radius: 10px; }
-    h2, h3 { color: #23395b; }
+    .container { max-width: 900px; margin: 2rem auto; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+    h2, h3 { color: #23395b; margin-top: 0; }
+    .callout { background: #eef2f8; border-left: 4px solid #23395b; padding: 1rem; border-radius: 8px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 820px) { .grid { grid-template-columns: 1fr 1fr; } }
+    ul { margin-top: .5rem; }
+    .small { color: #555; font-size: .95rem; }
   </style>
 </head>
 <body>
@@ -19,53 +25,98 @@
   <h1>The Problem</h1>
   <nav>
     <a href="index.html">Home</a>
-<a href="problem.html">The Problem</a>
-<a href="data.html">Evidence & Data</a>
-<a href="policy.html">Policy Solution</a>
-<a href="action.html">Take Action</a>
-<a href="references.html">References</a>
-
+    <a href="problem.html">The Problem</a>
+    <a href="data.html">Evidence & Data</a>
+    <a href="policy.html">Policy Solution</a>
+    <a href="action.html">Take Action</a>
+    <a href="references.html">References</a>
   </nav>
 </header>
 
 <div class="container">
-  <h2>Background</h2>
+
+  <h2>What’s happening</h2>
   <p>
-    U.S. adolescents are experiencing record levels of sadness and hopelessness. National
-    surveys show steep rises in anxiety, depression, and suicidal thoughts. These trends
-    predate COVID-19 but have worsened since.
+    Youth mental health has worsened over the last decade. At the same time, teens spend more
+    time inside digital environments shaped by AI-driven feeds and recommendations. This project
+    focuses on how that combo can increase risk — and why schools and policymakers need better
+    information to respond.
   </p>
 
-  <h2>How AI and Social Media Intensify Risk</h2>
+  <div class="callout">
+    <strong>Core idea:</strong> When screen time rises and online content gets more “sticky,”
+    well-being can drop — and the students who may need support most aren’t always the ones who
+    feel connected to trusted help.
+  </div>
+
+  <h2>How AI-driven platforms intensify risk</h2>
+  <div class="grid">
+    <div>
+      <h3>1) Engagement beats well-being</h3>
+      <ul>
+        <li>Algorithms prioritize content that keeps people scrolling (not what’s healthiest).</li>
+        <li>Negative, emotional, or extreme content can get rewarded with attention.</li>
+        <li>Recommendation systems can lead users from “mild” content to more intense material.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>2) Social comparison is built in</h3>
+      <ul>
+        <li>Curated feeds can amplify body-image pressure and “everyone is happier than me” thinking.</li>
+        <li>Likes/metrics can turn identity and popularity into a constant scoreboard.</li>
+        <li>Sleep loss from late-night use can make stress and mood worse the next day.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Who is most affected</h2>
+  <p>
+    Digital harms don’t hit everyone evenly. Some groups face extra exposure to harassment,
+    discrimination, or targeted content — and may have fewer offline supports available.
+  </p>
   <ul>
-    <li>Algorithms amplify emotionally charged or harmful content.</li>
-    <li>Comparison culture increases shame, stress, and body-image issues.</li>
-    <li>Recommendation systems can push youth deeper into negative spiral content.</li>
+    <li><strong>Girls</strong> often face stronger appearance pressure and social comparison.</li>
+    <li><strong>LGBTQ+ youth</strong> may face higher harassment risk and fewer safe offline spaces.</li>
+    <li><strong>Students of color</strong> can experience bias, hate content, and unequal access to support.</li>
   </ul>
 
+  <h2>Why this is a policy problem (not just “personal choice”)</h2>
   <p>
-    Adolescents - especially girls, LGBTQ+ youth, and students of color - face additional harms
-    from harassment, bias, and discrimination embedded in online systems.
+    This isn’t only about individual self-control. The environment is engineered: AI systems shape
+    what youth see, how long they stay, and what content gets repeated. That means the response
+    can’t rely on “just log off” — it needs better guardrails and better support systems.
   </p>
 
-  <h2>Data Gaps</h2>
+  <h2>The biggest obstacle: data gaps</h2>
   <p>
-    Public institutions lack detailed data on youth digital behavior. Platforms possess rich
-    behavioral datasets but do not share them in standardized, usable formats. Without timely
-    data, policymakers cannot evaluate digital risks or regulate effectively.
+    Schools and public agencies don’t have enough timely, usable information to track digital
+    well-being risks or evaluate what actually helps. Platforms hold detailed behavioral data,
+    but it’s not shared in consistent, policy-ready ways.
+  </p>
+  <ul>
+    <li>Public surveys capture trends, but often with limited detail and slow turnaround.</li>
+    <li>Platforms have the “real-time” picture, but the public can’t easily audit or compare it.</li>
+    <li>Without better data, it’s hard to target resources, measure impact, or build smart regulation.</li>
+  </ul>
+
+  <p class="small">
+    This is why the next sections matter: the <a href="data.html">Evidence & Data</a> page shows what
+    national survey data can already tell us, and the <a href="policy.html">Policy Solution</a> page
+    explains how a stronger data infrastructure can support youth protection and school-based help.
   </p>
 
   <h2>Stakeholders</h2>
   <ul>
-    <li>Adolescents</li>
-    <li>Parents & caregivers</li>
-    <li>Schools & universities</li>
-    <li>Mental-health professionals</li>
-    <li>Technology companies</li>
-    <li>Federal & state policymakers</li>
+    <li><strong>Adolescents</strong> (health, identity, safety)</li>
+    <li><strong>Parents & caregivers</strong> (guidance, monitoring, support)</li>
+    <li><strong>Schools</strong> (prevention, counseling capacity, trusted access points)</li>
+    <li><strong>Mental health professionals</strong> (care pathways, referral networks)</li>
+    <li><strong>Technology companies</strong> (design choices, transparency, accountability)</li>
+    <li><strong>Policymakers</strong> (public health response, standards, oversight)</li>
   </ul>
+
 </div>
 
 </body>
 </html>
-
