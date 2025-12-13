@@ -4,145 +4,190 @@
   <meta charset="UTF-8">
   <title>Evidence & Data</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body { font-family: system-ui; margin: 0; background: #f5f5f5; }
+    body { font-family: system-ui; margin: 0; background: #f5f5f5; color:#111; }
     header { background: #23395b; color: white; padding: 1.2rem; }
     nav a { color: white; margin-right: 1rem; text-decoration: none; font-weight: bold; }
     .container { max-width: 900px; margin: 2rem auto; padding: 1.5rem; background: white; border-radius: 8px; }
+
+    /* Make sections look connected + consistent */
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 1.1rem;
+      margin: 1.2rem 0;
+      background: #fff;
+    }
+
+    .card h2, .card h3 { margin-top: 0; }
+
+    .muted { color: #4b5563; }
+
+    /* Responsive embeds */
+    .embed {
+      width: 100%;
+      margin: 0.75rem auto 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fafafa;
+    }
+
+    .embed iframe{
+      display:block;
+      width:100%;
+      height: 600px; /* default for your Plotly embeds */
+      border:0;
+    }
+
+    /* Looker dashboard: taller */
+    .embed.looker iframe{
+      height: 900px;   /* adjust if needed */
+    }
+
+    @media (max-width: 640px){
+      .embed iframe { height: 520px; }
+      .embed.looker iframe { height: 820px; }
+    }
+
     table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
     th, td { border: 1px solid #ddd; padding: .6rem; text-align: center; }
     th { background: #eef2f8; }
+
+    img { max-width: 100%; border-radius: 8px; border: 1px solid #e5e7eb; }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Evidence & Data</h1>
   <nav>
     <a href="index.html">Home</a>
-<a href="problem.html">The Problem</a>
-<a href="data.html">Evidence & Data</a>
-<a href="policy.html">Policy Solution</a>
-<a href="action.html">Take Action</a>
-<a href="references.html">References</a>
-
+    <a href="problem.html">The Problem</a>
+    <a href="data.html">Evidence & Data</a>
+    <a href="policy.html">Policy Solution</a>
+    <a href="action.html">Take Action</a>
+    <a href="references.html">References</a>
   </nav>
 </header>
 
 <div class="container">
-<section id="dashboard" style="margin-top: 2rem;">
-  <h2>Interactive Data Dashboard</h2>
-  <p>
-    This dashboard brings together national data from the
-    <strong>Monitoring the Future (MTF)</strong> study to explore how
-    high school students' screen time relates to happiness and views of
-    school mental health support.
-  </p>
 
-  <!-- 1. Three-outcomes line chart -->
-  <h3>1. Positive Outcomes by Screen Time (Interactive)</h3>
-  <p>
-    <strong>How to use:</strong> Hover over the points and lines to see
-    the exact percentage of students who are very happy, who find school
-    counseling helpful, and who find school mental health resources
-    helpful at each level of weekday screen time. Click items in the
-    legend to hide or show each outcome.
-  </p>
+  <!-- ====== SECTION 1: Your MTF embedded dashboard pieces ====== -->
+  <section id="dashboard" class="card">
+    <h2>Interactive Data Dashboard</h2>
+    <p class="muted">
+      This dashboard brings together national data from the
+      <strong>Monitoring the Future (MTF)</strong> study to explore how
+      high school students' screen time relates to happiness and views of
+      school mental health support.
+    </p>
 
-  <div style="width: 100%; max-width: 1000px; margin: 0 auto 2rem;">
-    <iframe
-      src="mtf_three_outcomes_by_hours.html"
-      title="MTF three outcomes by screen time"
-      style="width: 100%; height: 600px; border: none;"
-      loading="lazy"
-    ></iframe>
-  </div>
+    <h3>1. Positive Outcomes by Screen Time (Interactive)</h3>
+    <p>
+      <strong>How to use:</strong> Hover over the points and lines to see
+      the exact percentage of students who are very happy, who find school
+      counseling helpful, and who find school mental health resources
+      helpful at each level of weekday screen time. Click items in the
+      legend to hide or show each outcome.
+    </p>
 
-  <!-- 2. Radar chart -->
-  <h3>2. Digital Well-Being Profile by Screen Time (Interactive Radar)</h3>
-  <p>
-    <strong>How to use:</strong> Each colored shape represents one
-    screen-time group (&lt;3 hours, 3–6 hours, 7+ hours). The farther a
-    point is from the center, the higher the percentage of students in
-    that group who report that outcome. Hover to see the exact values;
-    toggle groups on and off using the legend.
-  </p>
+    <div class="embed">
+      <iframe
+        src="mtf_three_outcomes_by_hours.html"
+        title="MTF three outcomes by screen time"
+        loading="lazy">
+      </iframe>
+    </div>
 
-  <div style="width: 100%; max-width: 1000px; margin: 0 auto 2rem;">
-    <iframe
-      src="mtf_radar_by_hours.html"
-      title="MTF radar profile by screen time"
-      style="width: 100%; height: 600px; border: none;"
-      loading="lazy"
-    ></iframe>
-  </div>
+    <h3 style="margin-top:1.2rem;">2. Digital Well-Being Profile by Screen Time (Interactive Radar)</h3>
+    <p>
+      <strong>How to use:</strong> Each colored shape represents one
+      screen-time group (&lt;3 hours, 3–6 hours, 7+ hours). The farther a
+      point is from the center, the higher the percentage of students in
+      that group who report that outcome. Hover to see the exact values;
+      toggle groups on and off using the legend.
+    </p>
 
-  <!-- 3. Short analysis -->
-  <h3>What this dashboard shows</h3>
-  <p>
-    These charts use MTF survey data on 12th graders. Screen-time is
-    grouped into three categories: less than 3 hours, 3–6 hours, and
-    7+ hours of video/TV on devices on a typical weekday. The outcomes
-    are:
-  </p>
-  <ul>
-    <li><strong>Very happy</strong> – students who describe themselves as very happy overall.</li>
-    <li><strong>Counseling helpful</strong> – students who say school counseling is quite or extremely helpful.</li>
-    <li><strong>Mental health resources helpful</strong> – students who say school mental health resources are quite or extremely helpful.</li>
-  </ul>
+    <div class="embed">
+      <iframe
+        src="mtf_radar_by_hours.html"
+        title="MTF radar profile by screen time"
+        loading="lazy">
+      </iframe>
+    </div>
 
-  <p>
-    Looking across the dashboard, students with <strong>lower daily screen
-    time</strong> are more likely to report being very happy and to see
-    school-based supports as helpful. As screen time rises into the 7+ hour
-    range, the share of “very happy” students drops, and fewer students feel
-    strongly positive about school counseling and mental health resources.
-  </p>
+    <h3 style="margin-top:1.2rem;">What this dashboard shows</h3>
+    <p>
+      These charts use MTF survey data on 12th graders. Screen-time is
+      grouped into three categories: less than 3 hours, 3–6 hours, and
+      7+ hours of video/TV on devices on a typical weekday. The outcomes
+      are:
+    </p>
 
-  <p>
-    Together with the YRBS findings (which show how common high screen time
-    is among U.S. high school students), this dashboard supports the
-    argument in my op-ed and policy brief: schools need to both
-    <strong>address heavy digital use</strong> and <strong>strengthen
-    visible, trusted mental health supports</strong>, especially for the
-    students who are online the most.
-  </p>
-</section>
+    <ul>
+      <li><strong>Very happy</strong> – students who describe themselves as very happy overall.</li>
+      <li><strong>Counseling helpful</strong> – students who say school counseling is quite or extremely helpful.</li>
+      <li><strong>Mental health resources helpful</strong> – students who say school mental health resources are quite or extremely helpful.</li>
+    </ul>
 
-  <h2>Screen Time by Gender (YRBS 2021)</h2>
-<p>
-  The chart below shows the proportion of U.S. high school students who report
-  spending <strong>3+ hours of daily screen time</strong> outside of schoolwork, broken 
-  down by gender, using nationally representative YRBS 2021 data.
-</p>
+    <p>
+      Looking across the dashboard, students with <strong>lower daily screen
+      time</strong> are more likely to report being very happy and to see
+      school-based supports as helpful. As screen time rises into the 7+ hour
+      range, the share of “very happy” students drops, and fewer students feel
+      strongly positive about school counseling and mental health resources.
+    </p>
 
-<img src="screen_by_gender.png" style="max-width: 100%; border-radius: 8px;">
+    <p>
+      Together with the YRBS findings (which show how common high screen time
+      is among U.S. high school students), this dashboard supports the
+      argument in my op-ed and policy brief: schools need to both
+      <strong>address heavy digital use</strong> and <strong>strengthen
+      visible, trusted mental health supports</strong>, especially for the
+      students who are online the most.
+    </p>
+  </section>
+
+  <!-- ====== SECTION 2: YRBS chart image ====== -->
+  <section class="card">
+    <h2>Screen Time by Gender (YRBS 2021)</h2>
+    <p class="muted">
+      The chart below shows the proportion of U.S. high school students who report
+      spending <strong>3+ hours of daily screen time</strong> outside of schoolwork, broken
+      down by gender, using nationally representative YRBS 2021 data.
+    </p>
+    <img src="screen_by_gender.png" alt="Screen time by gender (YRBS 2021)">
+  </section>
+
+  <!-- ====== SECTION 3: Looker Studio dashboard embed ====== -->
+  <section id="data-dashboard" class="card">
+    <h2>Interactive Mental Health Data Dashboard</h2>
+
+    <p class="muted">
+      Use the filters to explore how perceived mental health support and well-being
+      differ by race, gender, happiness, and future outlook.
+    </p>
+
+    <ul>
+      <li>Use the filters at the top to filter by demographics.</li>
+      <li>Charts update automatically based on your selections.</li>
+      <li>Percentages represent within-group distributions.</li>
+    </ul>
+
+    <div class="embed looker">
+      <iframe
+        src="https://lookerstudio.google.com/embed/reporting/f23efd58-7316-46c3-b688-241b680c3b0b/page/Z7diF"
+        title="Looker Studio Dashboard"
+        allowfullscreen
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+      </iframe>
+    </div>
+  </section>
 
 </div>
-  <section id="data-dashboard">
-  <h1>Interactive Mental Health Data Dashboard</h1>
-
-  <p>
-    Use the filters to explore how perceived mental health support and well-being
-    differ by race, gender, happiness, and future outlook.
-  </p>
-<ul>
-  <li>Use the slicers at the top to filter by demographics.</li>
-  <li>Charts update automatically based on your selections.</li>
-  <li>Percentages represent within-group distributions.</li>
-</ul>
-
-   <div class="dashboard-wrapper">
-    <iframe
-      src="https://lookerstudio.google.com/embed/reporting/f23efd58-7316-46c3-b688-241b680c3b0b/page/Z7diF"
-      frameborder="0"
-      allowfullscreen
-      sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-    </iframe>
-  </div>
-
-</section>
-
 
 </body>
 </html>
